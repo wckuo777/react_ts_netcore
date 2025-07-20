@@ -1,0 +1,15 @@
+/* styles.css */
+table {
+  border-collapse: collapse; /* Prevents double borders between cells */
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black; /* Adds a 1px solid black border to header and data cells */
+  padding: 8px; /* Adds some spacing inside the cells */
+  text-align: left;
+}
+
+th {
+  background-color: #58b4cf; /* Optional: adds a background color to header cells */
+}

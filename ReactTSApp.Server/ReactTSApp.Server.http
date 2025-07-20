@@ -1,0 +1,6 @@
+@ReactTSApp.Server_HostAddress = http://localhost:5130
+
+GET {{ReactTSApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
