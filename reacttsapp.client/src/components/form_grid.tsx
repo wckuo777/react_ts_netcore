@@ -45,7 +45,7 @@ const handleChange = (index: number, field: keyof Row, value: string) => {
       <button onClick={() => {
         if (isEditing) handleSave();
         else setIsEditing(true);
-      }}>
+      }} style={{ marginBottom: '10px', backgroundColor:'#538cc5ff' }}>
         {isEditing ? '儲存' : '編輯'}
       </button>
 

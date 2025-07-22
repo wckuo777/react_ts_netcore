@@ -1,5 +1,5 @@
-import { createSlice  } from '@reduxjs/toolkit'
-import {type AppDispatch} from '../../store/store'
+import { createSlice  } from '@reduxjs/toolkit';
+import type { AppDispatch } from '../../store/types';
 // toolkit has immer
 export const counterSlice = createSlice({
   name: 'counter',
@@ -24,7 +24,7 @@ export const counterSlice = createSlice({
 
 export const { increment, decrement, incrementByAmount, setZero } = counterSlice.actions
 // thunk type ok1
-export const incrementAsync = (amount: number): ((dispatch: AppDispatch) => void) => {
+export const incrementAsync = (amount: number): ((dispatch: AppDispatch ) => void) => {
   return (dispatch) => {
     setTimeout(() => {
       dispatch(incrementByAmount(amount));

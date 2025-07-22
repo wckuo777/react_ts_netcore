@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice'; // 調整路徑對應你的檔案位置
+import counterReducer from '../features/counter/counterSlice'; 
 import pangramReducer from '../features/pangram/pangramSlice'; 
 import numSorterReducer from '../features/numSorter/numSorterSlice'; 
 export const store = configureStore({

@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';
 import {
   increment,
@@ -8,12 +7,12 @@ import {
   setZero,
   selectCount,
 } from './counterSlice';
- import type { AppDispatch } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+ 
 
 export default function Counter() {
-  const count = useSelector((state: RootState) => selectCount(state));
- // 預先型別
-const dispatch = useDispatch<AppDispatch>();
+  const count = useAppSelector((state: RootState) => selectCount(state));
+  const dispatch = useAppDispatch();
 
   return (
     <div>

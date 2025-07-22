@@ -92,7 +92,7 @@ export default function FibonacciCalculator() {
         </select>
       </div>
 
-      <button onClick={calculate} style={{ marginTop: '10px' }}>
+      <button onClick={calculate} style={{ marginTop: '10px', backgroundColor:'#538cc5ff' , marginRight: '10px' }} >
         計算
       </button>
 

@@ -37,10 +37,10 @@ export default function NumberSorter() {
       </div>
 
       <div style={{ marginTop: '10px' }}>
-        <button onClick={() => dispatch(sortAsc())} style={{ marginRight: '10px' }}>
+        <button onClick={() => dispatch(sortAsc())} style={{ marginTop: '10px', backgroundColor:'#538cc5ff' , marginRight: '10px' }}>
           遞增排序
         </button>
-        <button onClick={() => dispatch(sortDesc())}>遞減排序</button>
+        <button onClick={() => dispatch(sortDesc())} style={{ marginTop: '10px', backgroundColor:'#538cc5ff' , marginRight: '10px' }}>遞減排序</button>
       </div>
 
       {sortedResult.length > 0 && (

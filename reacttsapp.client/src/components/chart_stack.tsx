@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
+import type { LegendPayload } from 'recharts/types/component/DefaultLegendContent';
 
 interface TestData {
-   name: string;
-    uv: number;
-    pv: number;
-    amt: number;
+  name: string;
+  uv: number;
+  pv: number;
+  amt: number;
 }
 const data: TestData[] = [
   {
@@ -61,14 +62,13 @@ export default function AppStackChart() {
 
   ];
   const barOrder = ['pv', 'uv', 'amt'];
-  type LegendType = { value: string; dataKey: string; color: string };
-  const handleLegendClick = (item: LegendType ) => {
+  const handleLegendClick = (item: LegendPayload) => {
     const key = item.dataKey as string;
     setHiddenKeys((prev) =>
-      prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
+      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     );
   };
-  
+
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -79,7 +79,6 @@ export default function AppStackChart() {
         <Legend
           onClick={handleLegendClick}
           itemSorter={(item) => barOrder.indexOf(item.dataKey as string)}
-         
         />
         {legendPayload.map(item => (
           <Bar
@@ -89,9 +88,9 @@ export default function AppStackChart() {
             fill={item.color}
             hide={hiddenKeys.includes(item.dataKey)}
             name={item.dataKey + '-Clickable'}
-          
+
           >
-            <LabelList dataKey={item.dataKey}   position="middle" fill="#c96687ff"   />
+            <LabelList dataKey={item.dataKey} position="middle" fill="#c96687ff" />
           </Bar>
         ))}
       </BarChart>
